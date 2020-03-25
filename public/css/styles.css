@@ -8,6 +8,7 @@
 
 html {
     font-size: 16px;
+    font-family: lato;
 }
 
 input {
@@ -20,15 +21,31 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-h1 {
-    margin-bottom: 16px;
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
 }
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.3); 
+    
+}
+
 
 label {
     display: block;
     font-size: 14px;
     margin-bottom: 8px;
-    color: #777;
+    color: #606770;
 }
 
 input {
@@ -91,12 +108,121 @@ button:disabled {
 
 .chat__sidebar {
     height: 100vh;
+    width: 26%;
     color: white;
-    background: #333744;
-    width: 225px;
-    overflow-y: scroll
+    background: #fff;
+    overflow: hidden;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.25)
 }
 
+.chat__sidebar .sidebar-header {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-family: lato;
+    height: 60px;
+    overflow: hidden;
+    font-size: 24px;
+    padding: 10px 16px 10px 16px;
+}
+
+.chat__sidebar .sidebar-header > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.chat__sidebar .sidebar-header .sidebar-search-box {
+    padding: 4px 16px 12px;
+    display: block;
+}
+.chat__sidebar .search-box {
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+}
+
+.chat__sidebar .sidebar-body {
+    height: 90vh;
+    overflow-x: hidden;
+    box-sizing: inherit;
+    overflow-y: scroll;
+}
+
+.chat__sidebar .search-bar {
+    margin: 4px 16px 12px;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 50px;
+    font-size: 15px;
+    height: 36px;
+}
+
+.chat__sidebar input {
+    box-sizing: border-box;
+    font-family: lato;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 0px !important;
+    margin-top: 3.4px;
+    max-width: 430px;
+    background: transparent;
+    width: 80%;
+    font-weight: normal;
+    border: 0;
+}
+
+svg.svg-inline--fa.fa-search.fa-w-16 {
+    width: 15%;
+}
+
+/* Conversations style */
+.conversations .conversation-list .conversation-list-item {
+    background-color: white;
+    padding: 10px 0px;
+}
+
+.conversation-list-item .conversation-img {
+    max-width: 85px;
+    margin-left: 10px;
+}
+
+.conversation-img img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.conversation-list-item .conversation-content {
+    padding-right: 0px;
+}
+
+.conversation-list-item .conversation-list-item-title {
+    margin-bottom: 0px;
+    font-weight: inherit;
+    color: black;
+}
+
+.conversation-content .conversation-list-item-message {
+    font-size: 13px;
+    font-weight: normal;
+    color: #999999;
+}
+
+.message-unread {
+    font-weight: bold;
+    color: black !important;
+}
+
+.message-active {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
 /* Chat styles */
 
 .chat__main {
@@ -163,10 +289,12 @@ button:disabled {
 /* Chat Sidebar Styles */
 
 .room-title {
-    font-weight: 400;
-    font-size: 22px;
-    background: #2c2f3a;
-    padding: 24px;   
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s; 
 }
 
 .list-title {

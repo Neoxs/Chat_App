@@ -69,7 +69,7 @@ socket.on('roomData', ({ room, users }) => {
         room,
         users
     })
-    document.querySelector('#sidebar').innerHTML = html
+    document.querySelector('.sidebar-chat-list').innerHTML = html
 })
 
 $messageForm.addEventListener('submit', (e) => {
